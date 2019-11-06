@@ -4,6 +4,10 @@
 
         <meta charset="UTF-8">
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
         <title>GifTastic</title>
@@ -16,7 +20,7 @@
             <div class="row">
                 <div class="col-12">
                     <!--buttons will be rendered on the screen from our array list in javascript-->
-                    <button id="already-made-buttons"></button>
+                    <div id="already-made-buttons"></div>
                 </div>
             </div>
 
@@ -31,14 +35,18 @@
                 <div class="col-5">
                     <!--a form for the user to input a new item to be added to the buttons list-->
                     <form id="add-gif-form">
-                        <label for="gif-input">Add Some Gifs!</label>
+                        <label for="gif-input">Add a reaction!</label>
+                        <br>
                         <input type="text" id="gif-input">
                         <br>
-                        <input id="add-gif" type="submit" value="Add Some Gifs!">
+                        <input id="add-gif" type="submit" value="add my gif reaction">
                     </form>
                 </div>
             </div>          
         </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/gif.js"></script>
 
     </body>
 
