@@ -23,22 +23,32 @@ $(document).ready(function() {
         }
     }
 
-    function displayGifs() {
+    $("#already-made-buttons").on("click", function() {
+
     var reaction = $(this).attr("data-reaction");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reactions + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX";
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
 
-        var reactionDiv = $("<div class='reaction'>");
+        var reactions = response.data;
 
-        
+        for (var i = 0; i < reactions.length; i++) {
+
+            var gifDiv = $("<div>");
+
+            var reactionImage = $("<img>");
+
+            reactionImage.attr("src", reactions[i].images.fixed_height.url);
+
+            gifDiv.append(reactionImage);
+
+            $("#gifs-displayed").prepend(gifDiv);
+        }       
     })
-
-
-    }
+})
 
 
     displayButtons();
