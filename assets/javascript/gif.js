@@ -2,19 +2,44 @@ $(document).ready(function() {
 
     var reactionGifs = ["Thumbs Up", "Excited", "Tired", "Happy", "Confused", "Shocked", "Eyeroll", "OMG"];
 
+//========================================
+
+    //function to diplay and assign each button to their proper name from the array
     function displayButtons() {
+
+        $("#already-made-buttons").empty();
          
-        var buttons = $("#already-made-buttons")
         for(var i = 0; i < reactionGifs.length; i++) {
-            buttons.append("<button id='gif-buttons'>" + reactionGifs[i] + "</button>");
+
+            var buttonDiv = $("<button>");
+
+            buttonDiv.addClass("reaction-btn");
+
+            buttonDiv.attr("data-name", reactionGifs[i]);
+
+            buttonDiv.text(reactionGifs[i]);
+
+            $("#already-made-buttons").append(buttonDiv);
         }
     }
 
-    displayButtons();
-
     function displayGifs() {
     var reaction = $(this).attr("data-reaction");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reactions + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reactions + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+
+        var reactionDiv = $("<div class='reaction'>");
+
+        
+    })
+
 
     }
+
+
+    displayButtons();
 }) 
