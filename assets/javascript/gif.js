@@ -1,8 +1,36 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
     var reactionGifs = ["Thumbs Up", "Excited", "Tired", "Happy", "Confused", "Shocked", "Eyeroll", "OMG"];
 
 //========================================
+
+   // $("#already-made-buttons").on("click", function() {
+    function displayGifs() {
+
+        var reaction = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX&limit=10";
+    
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+    
+            var reactions = response.data;
+    
+            for (var i = 0; i < reactions.length; i++) {
+    
+                var gifDiv = $("<div>");
+    
+                var reactionImage = $("<img>");
+    
+                reactionImage.attr("src", reactions[i].images.fixed_height.url);
+    
+                gifDiv.append(reactionImage);
+    
+                $("#gifs-displayed").prepend(gifDiv);
+            }       
+        })
+    }
 
     //function to diplay and assign each button to their proper name from the array
     function displayButtons() {
@@ -11,7 +39,7 @@ $(document).ready(function() {
          
         for(var i = 0; i < reactionGifs.length; i++) {
 
-            var buttonDiv = $("<button>");
+            var buttonDiv = $("<button type='button' class='btn btn-outline-warning'></button>");
 
             buttonDiv.addClass("reaction-btn");
 
@@ -23,33 +51,19 @@ $(document).ready(function() {
         }
     }
 
-    $("#already-made-buttons").on("click", function() {
+    $("#add-gif").on("click", function(event) {
+        event.preventDefault();
 
-    var reaction = $(this).attr("data-reaction");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX";
+        var reaction = $("#gif-input").val().trim();
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function(response) {
+        reactionGifs.push(reaction);
 
-        var reactions = response.data;
+        displayButtons();
+    });
 
-        for (var i = 0; i < reactions.length; i++) {
-
-            var gifDiv = $("<div>");
-
-            var reactionImage = $("<img>");
-
-            reactionImage.attr("src", reactions[i].images.fixed_height.url);
-
-            gifDiv.append(reactionImage);
-
-            $("#gifs-displayed").prepend(gifDiv);
-        }       
-    })
-})
-
+    $(document).on("click", ".reaction-btn", displayGifs);
 
     displayButtons();
-}) 
+
+
+// }) 
