@@ -7,16 +7,16 @@
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Space Mono', monospace;
 }
 
 body {
-    background-color: #744b00;
+    background-color: #235d7d;
 }
 
 button, form, input {
-    margin: 10px;
+    margin: 6px;
     font-family: 'Space Mono', monospace;
 }
 
@@ -37,3 +37,8 @@ label {
 .gifs {
     margin: 15px;
 }
+
+/* .gif-img{
+    width: 250px;
+    height: 250px;
+} */
