@@ -1,15 +1,39 @@
+.navbar {
+    background-color: #050505;
+    color: #e0e0e0;
+}
+
+.navbar-brand {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: 'Space Mono', monospace;
+}
+
 body {
-    background-color: #2f3c2f;
+    background-color: #744b00;
 }
 
 button, form, input {
     margin: 10px;
+    font-family: 'Space Mono', monospace;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 label {
     color: #e0e0e0;
+    font-size: 1.5rem;
 }
 
 #gif-input {
     width: 15rem;
+}
+
+.gifs {
+    margin: 15px;
 }
