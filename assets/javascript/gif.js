@@ -4,7 +4,7 @@
 
 //========================================
 
-   // $("#already-made-buttons").on("click", function() {
+    //Function: displays gifs when buttons are clicked because of url link
     function displayGifs() {
 
         var reaction = $(this).attr("data-name");
@@ -19,7 +19,7 @@
     
             for (var i = 0; i < reactions.length; i++) {
     
-                var gifDiv = $("<div>");
+                var gifDiv = $("<div class='gifs'>");
     
                 var reactionImage = $("<img>");
     
@@ -39,7 +39,7 @@
          
         for(var i = 0; i < reactionGifs.length; i++) {
 
-            var buttonDiv = $("<button type='button' class='btn btn-outline-warning'></button>");
+            var buttonDiv = $("<button type='button' class='btn btn-light'></button>");
 
             buttonDiv.addClass("reaction-btn");
 
