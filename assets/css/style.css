@@ -1,0 +1,15 @@
+body {
+    background-color: #2f3c2f;
+}
+
+button, form, input {
+    margin: 10px;
+}
+
+label {
+    color: #e0e0e0;
+}
+
+#gif-input {
+    width: 15rem;
+}
