@@ -6,6 +6,8 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -15,6 +17,10 @@
     </head>
 
     <body>
+
+        <nav class="navbar">
+            <span id="header" class="navbar-brand mb-0 h1">Let's get GIPHY with it</span>
+        </nav>
 
         <div class="containter">
             <div class="row">
@@ -35,11 +41,11 @@
                 <div class="col-4">
                     <!--a form for the user to input a new item to be added to the buttons list-->
                     <form id="add-gif-form">
-                        <label for="gif-input">Add a reaction!</label>
+                        <label for="gif-input"> Add a reaction!</label>
                         <br>
                         <input type="text" id="gif-input">
                         <br>
-                        <input id="add-gif" type="submit" value="add my reaction">
+                        <input id="add-gif" type="button" class="btn btn-warning" value="add my reaction">
                     </form>
                 </div>
             </div>          
