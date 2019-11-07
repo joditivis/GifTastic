@@ -3,11 +3,15 @@
     // array of reactions
     var reactionGifs = ["Thumbs Up", "Excited", "Tired", "Happy", "Confused", "Shocked", "Eyeroll", "OMG"];
 
+    // var localarray = JSON.parse(localStorage.getItem("gifs"))
+    // if(localarray){
+    //     reactionGifs = localarray;
+    // }
 
     // displayGifs function re-renders the HTML to display the correct gif content
-    function displayGifs() {
+    function displayGifs(reaction) {
 
-        var reaction = $(this).attr("data-name");
+        // query url link to giphy site for all the gifs data + my api key
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=rHck95bsI4QzUCeJ5VjSKTXO4MsOFMOX&limit=10";
     
         // creating an AJAX call for the specific reaction button being clicked
@@ -21,24 +25,38 @@
     
             for (var i = 0; i < reactions.length; i++) {
                 // creating a div to hold the gifs
-                var gifDiv = $("<div class='gifs'>");
+                var gifDiv = $("<div class='col gifs'>");
 
                 // creating a paragraph tag to hold the rating of each gif
                 var pRating = $("<p>").text("Rating: " + reactions[i].rating);
 
                 // appending the rating to each gif
-                gifDiv.append(pRating);
+            
     
                 // creating an element to hold each image
                 var reactionImage = $("<img>");  
-                reactionImage.attr("src", reactions[i].images.fixed_height.url);
+                // 
+                reactionImage.attr("src-alt", reactions[i].images.fixed_height.url);
+                reactionImage.attr("src", reactions[i].images.fixed_height_still.url);
+                reactionImage.addClass("gif-img");
     
                 //appending image to the page
                 gifDiv.append(reactionImage);
+                //appending rating to each image
+                gifDiv.append(pRating);
     
                 // prepend will put the new gif category above the previous category
                 $("#gifs-displayed").prepend(gifDiv);
-            }       
+            }
+            // 
+            $(".gif-img").on("click", function() {
+                console.log(this);
+                var temp = $(this).attr("src-alt")
+                $(this).attr("src-alt", $(this).attr("src"))
+                $(this).attr("src", temp)
+
+              
+            })
         })
     }
 
@@ -77,13 +95,18 @@
 
         // adding users new reaction to the button list (the array)
         reactionGifs.push(reaction);
+        // localStorage.setItem("gifs", JSON.stringify(reactionGifs))
 
         // calls displayButtons function to handle the processing of the reactions array
         displayButtons();
+        displayGifs(reaction)
     });
 
-    // a click event listener for all the
-    $(document).on("click", ".reaction-btn", displayGifs);
+    // a click event listener for gifs to display as well as be displayed when a user submits their new reaction
+    $(document).on("click", ".reaction-btn", function(){
+        var reaction = $(this).attr("data-name");
+        displayGifs(reaction)
+    } );
 
     // displays the initial buttons from array
     displayButtons();
