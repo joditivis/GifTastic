@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // array of reactions
-    var reactionGifs = ["Thumbs Up", "Excited", "Tired", "Happy", "Confused", "Shocked", "Eyeroll", "OMG"];
+    var reactionGifs = ["Thumbs Up", "Excited", "Tired", "Happy", "Confused", "Shocked", "Eyeroll", "OMG", "Happy Dance", "Upset", "Surprised", "Amused", "Awkward"];
 
     // displayGifs function re-renders the HTML to display the correct gif content
     function displayGifs(reaction) {
