@@ -1,5 +1,7 @@
 # GifTastic
 
+**Link to page: https://joditivis.github.io/GifTastic/**
+
 # About:
 University of Denver Coding Bootcamp sixth week assignment: This assignment required us to create a GIPHY generator using the AJAX GET method to get data and animated gifs from the GIPHY API.
 
