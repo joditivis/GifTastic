@@ -63,7 +63,7 @@ $(document).ready(function() {
         for(var i = 0; i < reactionGifs.length; i++) {
 
             // creating buttons (and style) for each reaction type in the array
-            var buttonDiv = $("<button type='button' class='btn btn-warning'></button>");
+            var buttonDiv = $("<button type='button' class='btn btn-dark'></button>");
 
             // adding a class for buttons
             buttonDiv.addClass("reaction-btn");
