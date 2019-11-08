@@ -1,19 +1,21 @@
 .navbar {
-    background-color: #050505;
-    color: #e0e0e0;
+    background-color: #539ecd9e;
+    color: #ffffff;
     border-bottom: 2px solid #6d6e72;
 }
 
 .navbar-brand {
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem;
-    font-size: 2.5rem;
+    padding: 1.5rem;
+    font-size: 2.7rem;
     font-family: 'Space Mono', monospace;
 }
 
 body {
-    background-color: #235d7d;
+    background-image: url(../images/clouds.gif);
+    background-size: 100%;
+    /* background-color: #235d7d; */
 }
 
 button, form, input {
@@ -27,7 +29,7 @@ button {
 }
 
 label {
-    color: #f2f1f1;
+    color: #595959;
     font-size: 1.5rem;
 }
 
@@ -42,7 +44,7 @@ label {
 .gif-img{
     width: 275px;
     height: 250px;
-    border: 2px solid #050505;
+    border: 2px solid #539ecdbf;
     border-radius: 2%;
 }
 
