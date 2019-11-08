@@ -87,7 +87,6 @@ $(document).ready(function() {
 
         // adding users new reaction to the button list (the array)
         reactionGifs.push(reaction);
-        // localStorage.setItem("gifs", JSON.stringify(reactionGifs))
 
         // calls displayButtons function to handle the processing of the reactions array
         displayButtons();
