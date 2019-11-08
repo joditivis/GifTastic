@@ -22,4 +22,4 @@ University of Denver Coding Bootcamp sixth week assignment: This assignment requ
 * GIPHY API
 
 # Features:
-![Image](gifpage.png)
+![Image](page.png)
